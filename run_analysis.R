@@ -41,8 +41,7 @@ total <- cbind(sub_total, y_total, x_total)
 total$activity <- factor(total$activity, levels = activity_labels[,1], labels = activity_labels[,2]) 
 total$subject  <- as.factor(total$subject) 
 
-# create a summary independent tidy dataset from final dataset 
-# with the average of each variable for each activity and each subject. 
+# create a summary independent tidy dataset from final dataset with the average of each variable for each activity and each subject. 
 total_mean <- total %>% group_by(activity, subject) %>% summarize_all(funs(mean)) 
 
 # export summary dataset
